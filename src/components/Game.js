@@ -6,14 +6,14 @@ class Game extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      square: [1,2,3,4,5,6,7,8,9]
+      square: Array(9).fill(null)
     };
   }
   render(){
     return (
       <div className="game">
         game
-        <Board squares={this.state.square}/>
+        <Board squares={this.state.square} onClick={this.props}/>
         <Status/>
       </div>
     );
