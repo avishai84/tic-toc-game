@@ -5,7 +5,7 @@ function Board(props){
     return (
       <div className="Board">
         Board
-        <Square/>
+        <Square />
       </div>
     );
 }
