@@ -5,7 +5,9 @@ function Board(props){
     return (
       <div className="Board">
         Board
-        <Square />
+        <Square 
+        onClick={(e)=>console.log(e.target)}
+        square={props.squares} />
       </div>
     );
 }
