@@ -2,7 +2,7 @@ import React from 'react';
 
 function Square(props){
     return (
-      <div className="square" onClick={props.onClick} >
+      <div className="square" onClick={props.onClick}>
           <div className="row1">
             <button id="0"></button>
             <button id="1"></button>
