@@ -1,5 +1,6 @@
 import React, {Fragment, Component} from 'react';
 import Square from './Square';
+import Status from './Status';
 
 class Board extends Component{
     constructor(props){
@@ -27,14 +28,6 @@ class Board extends Component{
         }
     }
     updateSqrArr(idPosition){
-        //  will update the array
-        //console.log(idPosition);
-        // getting the array
-        //const square = this.state.sqr.slice();
-        //console.log(square);
-        // update array with id to the correct mark
-        //const newSquare = square[idPosition] = this.state.mark;
-        //console.log(newSquare);
         // pass on data to parent Game
         this.props.updateSqr(idPosition, this.state.mark);
     }
@@ -49,7 +42,7 @@ class Board extends Component{
               square={this.props.squares} 
               />
               {this.state.sqr}
-             
+              <Status nextTurnIs={this.state.nextTurnIs}/>
             </div>
           );
     }

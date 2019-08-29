@@ -3,7 +3,7 @@ import React from 'react';
 function Status(props){
     return (
       <div className="Status">
-        Status
+        Next play is: {props.nextTurnIs ? 'X' : 'O'}
       </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './Board';
-import Status from './Status';
+
 
 class Game extends React.Component {
   constructor(props){
@@ -12,8 +12,8 @@ class Game extends React.Component {
     };
 
   }
+  // update which player is next
    updateGame(e, state, mark){
-    //console.log(e.target,state, mark);
     this.setState({
       nextTurnIs: state,
       mark: state ? 'O' : 'X' 
@@ -24,6 +24,7 @@ class Game extends React.Component {
       // update state for sqr
       let newArray = this.state.square;
       idPosition = Number.parseInt(idPosition);
+      // Update the array
       newArray[idPosition] = mark;
       this.setState({
         square : this.state.square
@@ -42,7 +43,7 @@ class Game extends React.Component {
         mark={this.state.mark}
         updateSqr={this.sqr.bind(this)}
         />
-        <Status nextTurnIs={this.state.nextTurnIs}/>
+       
       </div>
     );
   } 
