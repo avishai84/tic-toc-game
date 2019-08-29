@@ -11,25 +11,33 @@ class Board extends Component{
         };
     }
     triggeredFromSquare(e){
-        console.log('before');
-        console.log(this.props.mark);
         if(e.target.nodeName === 'BUTTON'){
             // this will determind which block you clicked on
-           // console.log(e.target.id);
             // target the btn which was clicked
             this.setState({
                 nextTurnIs: !this.state.nextTurnIs,
                 mark : this.state.nextTurnIs ? 'O' : 'X'
             });
            this.props.updateGame(e, this.state.nextTurnIs, this.state.mark);
+           // update positon in array based on id
+           this.updateSqrArr(e.target.id);
            if(e.target.nodeName === 'BUTTON'){
            e.target.innerText = this.props.mark;
-       
           }
         }
     }
-
-
+    updateSqrArr(idPosition){
+        //  will update the array
+        //console.log(idPosition);
+        // getting the array
+        //const square = this.state.sqr.slice();
+        //console.log(square);
+        // update array with id to the correct mark
+        //const newSquare = square[idPosition] = this.state.mark;
+        //console.log(newSquare);
+        // pass on data to parent Game
+        this.props.updateSqr(idPosition, this.state.mark);
+    }
 
     render(){
 

@@ -18,10 +18,6 @@ function Square(props){
             <button id="7"></button>
             <button id="8"></button>
           </div>
-        {/* {props.square.map((elem, index)=>{
-            return(<button onClick={props.onClick} id={index} key={index}>{elem}</button>);
-            
-        })} */}
       </div>
     );
 }

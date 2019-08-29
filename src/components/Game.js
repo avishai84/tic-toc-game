@@ -13,16 +13,25 @@ class Game extends React.Component {
 
   }
    updateGame(e, state, mark){
-    console.log(e.target,state, mark);
+    //console.log(e.target,state, mark);
     this.setState({
       nextTurnIs: state,
       mark: state ? 'O' : 'X' 
-    })
+      })
+    }
+
+    sqr(idPosition, mark){
+      // update state for sqr
+      let newArray = this.state.square;
+      idPosition = Number.parseInt(idPosition);
+      newArray[idPosition] = mark;
+      this.setState({
+        square : this.state.square
+      })
     }
 
   render(){
-    // console.log(this.state.nextTurnIs);
-    // console.log(this.state.mark);
+
     return (
       <div className="game">
         game
@@ -31,8 +40,7 @@ class Game extends React.Component {
         nextTurnIs={this.state.nextTurnIs} 
         updateGame={this.updateGame.bind(this)}
         mark={this.state.mark}
-        
-    
+        updateSqr={this.sqr.bind(this)}
         />
         <Status nextTurnIs={this.state.nextTurnIs}/>
       </div>
