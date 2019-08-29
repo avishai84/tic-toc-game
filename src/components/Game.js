@@ -7,24 +7,33 @@ class Game extends React.Component {
     super(props);
     this.state = {
       square: Array(9).fill(null),
-      nextTurnIs: true
+      nextTurnIs: true,
+      mark: 'X'
     };
 
   }
-   updateGame(state){
-   console.log('State: '+ state);
+   updateGame(e, state, mark){
+    console.log(e.target,state, mark);
     this.setState({
-   
-      nextTurnIs: state
-     
+      nextTurnIs: state,
+      mark: state ? 'O' : 'X' 
     })
-  }
+    }
+
   render(){
-    console.log(this.state.nextTurnIs);
+    // console.log(this.state.nextTurnIs);
+    // console.log(this.state.mark);
     return (
       <div className="game">
         game
-        <Board squares={this.state.square}  nextTurnIs={this.state.nextTurnIs} updateGame={this.updateGame.bind(this)}/>
+        <Board 
+        squares={this.state.square}  
+        nextTurnIs={this.state.nextTurnIs} 
+        updateGame={this.updateGame.bind(this)}
+        mark={this.state.mark}
+        
+    
+        />
         <Status nextTurnIs={this.state.nextTurnIs}/>
       </div>
     );

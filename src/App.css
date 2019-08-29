@@ -31,4 +31,7 @@
 .square > div button{
   border:1px solid blue;
   padding:15px;
+  outline:none;
+  font-size: 18px;
+  font-weight: 700;
 }
