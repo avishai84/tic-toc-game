@@ -17,7 +17,7 @@ import { expect } from 'chai';
 describe('testing user click', () => {
   it('simulates click events', () => {
     const onButtonClick = sinon.spy();
-    const component = shallow(<Sqaure className="square" onClick={onButtonClick}></Sqaure>);
+    const component = shallow(<Sqaure className="square" ></Sqaure>);
       // console.log(component.debug());
       // console.log(onButtonClick.debug());
       component.find('.square').simulate('click');
