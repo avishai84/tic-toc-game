@@ -15,7 +15,7 @@ describe('testing class square exist', () => {
     //const onButtonClick = sinon.spy();
     //<Sqaure className="square" onClick={onButtonClick}></Sqaure>
     const component = shallow(<Sqaure></Sqaure>);
-     expect(component.exists('.square')).to.equal(false);
+     expect(component.exists('.square')).to.equal(true);
        console.log(component.debug());
       // console.log(onButtonClick.debug());
       //component.find('.square');
