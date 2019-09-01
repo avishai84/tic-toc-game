@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Sqaure from './components/Square';
-import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
@@ -22,7 +21,6 @@ describe('testing if button elements exist', () => {
   })
 })
 
-
 describe('testing user click', () => {
   let counter = 0;
   it('simulates click events on Square component', () => {
@@ -31,30 +29,13 @@ describe('testing user click', () => {
           expect(counter).not.to.equal(0);
   });
 });
-//     const onButtonClick = sinon.spy();
-//     //<Sqaure className="square" onClick={onButtonClick}></Sqaure>
-//     const component = shallow(<Sqaure onClick={undefined}></Sqaure>);
-//      expect(component).to.have.properties('button');
-//        console.log(component.debug());
-      // console.log(onButtonClick.debug());
-      //component.find('.square');
-      //component.find('.square').simulate('click');
-      //expect(component).to.have.property('');
-      //expect(onButtonClick).to.have.property('onClick');
-      //component.find('.square').to.have.property('button');
-
-
-//   })
-// })
-//it('getting initial value from player', () =>{});
 
 
 
-
-
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+describe('React is running', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+});

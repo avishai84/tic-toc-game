@@ -36,7 +36,6 @@ class Board extends Component{
 
         return (
             <div className="Board">
-              Board
               <Square 
               onClick={(e) => this.triggeredFromSquare(e)}
               square={this.props.squares} 
