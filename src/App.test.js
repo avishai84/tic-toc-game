@@ -7,24 +7,18 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 
-
-
-
-describe('testing class square exist', () => {
+describe('testing if class on wrapper exist', () => {
   it('will check if .square class present', () => {
-    //const onButtonClick = sinon.spy();
-    //<Sqaure className="square" onClick={onButtonClick}></Sqaure>
     const component = shallow(<Sqaure></Sqaure>);
      expect(component.exists('.square')).to.equal(true);
-       console.log(component.debug());
-      // console.log(onButtonClick.debug());
-      //component.find('.square');
-      //component.find('.square').simulate('click');
-      //expect(component).to.have.property('');
-      //expect(onButtonClick).to.have.property('onClick');
-      //component.find('.square').to.have.property('button');
+  })
+})
 
 
+describe('testing if button elements exist', () => {
+  it('will check if buttons exists', () => {
+    const component = shallow(<Sqaure className="square"></Sqaure>);
+    expect(component.containsMatchingElement(<button></button>)).to.equal(true);
   })
 })
 
