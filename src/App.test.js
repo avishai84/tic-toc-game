@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Sqaure from './components/Square';
 import Board from './components/Board';
+import Game from './components/Game';
 import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 
@@ -13,7 +14,6 @@ describe('testing if class on wrapper exist', () => {
      expect(component.exists('.square')).to.equal(true);
   })
 })
-
 
 describe('testing if button elements exist', () => {
   it('will check if buttons exists', () => {
@@ -32,34 +32,15 @@ describe('testing user click', () => {
 });
 
 
-
-
-describe('testing Board', () => {
-  it('testing Board', () => {
-    const component = shallow(<Board></Board>);
-   
-    //console.log(component.debug())
-    //expect(component.containsMatchingElement(<button></button>)).to.equal(true);
-  })
-})
-
-
 describe('testing <Board/> for matching child components', () => {
   const wrapper = shallow(<Board/>);
     expect(wrapper.find('Square')).to.have.lengthOf(1);
-
-    //console.log(wrapper.debug());
-    //expect(component.containsMatchingElement(<button></button>)).to.equal(true);
   });
 
   describe('testing <Status/> for matching child components', () => {
     const wrapper = shallow(<Board/>);
       expect(wrapper.find('Status')).to.have.lengthOf(1);
-  
-  
-      //expect(component.containsMatchingElement(<button></button>)).to.equal(true);
     });
-
 
 describe('React is running', () => {
   it('renders without crashing', () => {
