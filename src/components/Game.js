@@ -8,7 +8,8 @@ class Game extends React.Component {
     this.state = {
       square: Array(9).fill(null),
       nextTurnIs: true,
-      mark: 'X'
+      mark: 'X',
+      ended: !false ? 'disabled': '' 
     };
 
   }
@@ -55,14 +56,15 @@ class Game extends React.Component {
   }
 
   render(){
-const statusWin = this.calcWin(this.state.square);
-let statusReport;
-if(statusWin){
-  statusReport = `Game Over! - ${statusWin} won.`
-}else{
-statusReport = 'Game on, no winners yet.'
-}
-console.log(statusWin);
+  
+    const statusWin = this.calcWin(this.state.square);
+    let statusReport;
+    if(statusWin){
+      statusReport = `Game Over! - ${statusWin} won.`
+    }else{
+    statusReport = 'Game on, no winners yet.'
+    }
+
     return (
       <div className="game">
         <h4>{statusReport}</h4>
