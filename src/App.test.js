@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Sqaure from './components/Square';
+import Board from './components/Board';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
