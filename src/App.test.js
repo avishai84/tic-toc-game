@@ -4,6 +4,8 @@ import App from './App';
 import Sqaure from './components/Square';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
+import { expect } from 'chai';
+
 
 
 // it('renders without crashing', () => {
@@ -15,11 +17,11 @@ import { shallow } from 'enzyme';
 describe('testing user click', () => {
   it('simulates click events', () => {
     const onButtonClick = sinon.spy();
-    const component = shallow(<Sqaure onClick={onButtonClick}/>);
+    const component = shallow(<Sqaure className="square" onClick={onButtonClick}></Sqaure>);
       // console.log(component.debug());
       // console.log(onButtonClick.debug());
       component.find('.square').simulate('click');
-      expect(onButtonClick).not.to.have.property('onClick');
+      expect(onButtonClick).to.have.property('onClick');
 
   })
 })
