@@ -22,8 +22,15 @@ describe('testing if button elements exist', () => {
   })
 })
 
-// describe('testing user click', () => {
-//   it('simulates click events', () => {
+
+describe('testing user click', () => {
+  let counter = 0;
+  it('simulates click events on Square component', () => {
+    const component = shallow(<Sqaure onClick={() => {counter = counter + 1; return counter;}}></Sqaure>);
+          component.find('.square').simulate('click');
+          expect(counter).not.to.equal(0);
+  });
+});
 //     const onButtonClick = sinon.spy();
 //     //<Sqaure className="square" onClick={onButtonClick}></Sqaure>
 //     const component = shallow(<Sqaure onClick={undefined}></Sqaure>);
