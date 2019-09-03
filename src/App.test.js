@@ -42,6 +42,20 @@ describe('testing <Board/> for matching child components', () => {
       expect(wrapper.find('Status')).to.have.lengthOf(1);
     });
 
+
+    describe('testing <Game/> if exist', () => {
+      const wrapper = shallow(<Game/>);
+        console.log(wrapper.debug());
+      expect(wrapper.find('.game')).to.have.lengthOf(1);
+      });
+
+      describe('testing <Game/> props nextTurnIs', () => {
+        const wrapper = shallow(<Game nextTurnIs={true}/>);
+          console.log(wrapper.debug());
+        expect(wrapper.props().nextTurnIs);
+        });
+
+
 describe('React is running', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
